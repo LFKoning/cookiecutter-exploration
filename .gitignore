@@ -1,2 +1,2 @@
 # Include data folder in cookiecutter
-!{{cookiecutter.azure_repo/data}}/**
+!{{cookiecutter.azure_repo}}/data/**
