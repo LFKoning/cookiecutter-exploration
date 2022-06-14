@@ -2,7 +2,7 @@ repos:
 
   # Some default pre-commit hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev:  master
+    rev:  v4.1.0
     hooks:
 
     - id: check-yaml
@@ -17,6 +17,14 @@ repos:
   - repo: local
     hooks:
 
+    # Clear output from Jupyter Notebooks
+    - id: clear-jupyter-output
+      name: Clear output in Jupyter Notebooks
+      stages: [commit]
+      language: system
+      files: \.ipynb$
+      entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+
     # Auto-format with local black
     - id: black
       name: Format code using black
@@ -24,7 +32,7 @@ repos:
       language: system
       entry: python -m black
       types: [python]
-      files: (^src/|^tests/)
+      files: (^notebooks/)
 
     # Lint with local pylint
     - id: pylint
@@ -33,12 +41,4 @@ repos:
       stages: [commit]
       entry: python -m pylint
       types: [python]
-      files: (^src/|^tests/)
-
-    # Clear output from Jupyter Notebooks
-    - id: clear-jupyter-output
-      name: Clear output in Jupyter Notebooks
-      stages: [commit]
-      language: system
-      files: \.ipynb$
-      entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+      files: (^notebooks/)

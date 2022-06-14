@@ -10,14 +10,26 @@ def check_sanity(value):
 
 # Check sanity of the inputs
 user_input = {
-    "project": "{{cookiecutter.project}}",
-    "package_name": "{{cookiecutter.package_name}}",
-    "package_path": "{{cookiecutter.package_path}}",
-    "azure_project": "{{cookiecutter.azure_project}}",
-    "azure_repo": "{{cookiecutter.azure_repo}}",
+    "project": {
+        "value": "{{ cookiecutter.project }}",
+        "pattern": r"^[a-zA-Z][a-zA-Z0-9\-_\s]+$",
+    },
+    "azure_project": {
+        "value": "{{ cookiecutter.azure_project }}",
+        "pattern": r"^[a-zA-Z\-]+$",
+    },
+    "azure_repo": {
+        "value": "{{ cookiecutter.azure_repo }}",
+        "pattern": r"^[a-z][a-z0-9\-_]+$",
+    },
+    "azure_url": {
+        "value": "{{ cookiecutter.azure_url }}",
+        "pattern": r"^https://afm-spot-on@dev.azure.com/afm-spot-on/[a-zA-Z\-]+/_git/[a-z][a-z0-9\-_]+$",
+    },
 }
 
-for item, value in user_input.items():
-    if not check_sanity(value):
-        print(f"ERROR: Input {item} contains invalid characters!")
+# Check sanity of the inputs
+for field, check in user_input.items():
+    if not re.match(check["pattern"], check["value"]):
+        print(f"ERROR: Input {field!r} contains invalid characters: {check['value']!r}!")
         sys.exit(1)

@@ -1,5 +1,5 @@
 # Name for the Anaconda environment
-name: {{cookiecutter.project_name}}
+name: {{cookiecutter.azure_repo}}
 
 # Project dependencies
 dependencies:

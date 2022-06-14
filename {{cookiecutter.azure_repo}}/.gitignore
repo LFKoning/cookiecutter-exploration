@@ -1,3 +1,11 @@
+
+# VS Code settings
+# Note: To share settings with others, uncomment this line.
+# .vscode
+
+# Do not include data into the code repo!
+data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -58,7 +66,3 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
-# VS Code settings
-# Note: To share settings with others, uncomment this line.
-# .vscode

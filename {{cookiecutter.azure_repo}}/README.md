@@ -15,7 +15,7 @@ conda create --file environment.yml
 Activate the environment to start working with it:
 
 ```shell
-conda activate {{cookiecutter.project_name}}
+conda activate {{cookiecutter.azure_repo}}
 ```
 
 Then create a folder for the project and clone the repository from Azure DevOps:
@@ -40,8 +40,15 @@ python -m pip install -e .[dev]
 
 TODO: Describe how to use your project...
 
+## Contributing
 
-## Authors
+If you want to contribute to this project, feel free to clone the code, make
+improvements and open a pull request!
+
+If you have suggestions or remarks not directly related to the project's code or
+documentation, feel free to e-mail the authors.
+
+## Maintainers
 
 This project is maintained by:
 
