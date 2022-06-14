@@ -13,6 +13,8 @@ def is_yes(value):
 print("\n\n")
 print("Post-processing cookiecutter template.")
 
+# Rename gitignore
+os.rename('gitignore', '.gitignore')
 
 # Create git repo
 if is_yes("{{ cookiecutter.create_git }}"):
