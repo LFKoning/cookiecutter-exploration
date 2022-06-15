@@ -29,7 +29,7 @@ Once you have cookiecutter installed, you can use the template to create a new p
 Go to the folder on your local drive where you want to create the new project and type:
 
 ```shell
-cookiecutter https://github.com/LFKoning/cookiecutter_package
+cookiecutter https://github.com/LFKoning/cookiecutter_exploration
 ```
 
 This will start cookicutter and ask you for the following inputs:
