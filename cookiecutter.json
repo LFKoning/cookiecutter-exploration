@@ -4,7 +4,7 @@
     "project": null,
     "azure_project": null,
     "azure_repo": "{{ cookiecutter.project|lower|replace(' ', '-') }}",
-    "azure_url": "https://afm-spot-on@dev.azure.com/afm-spot-on/{{ cookiecutter.azure_project }}/_git/{{ cookiecutter.azure_repo }}",
+    "azure_url": "https://dev.azure.com/afm-spot-on/{{ cookiecutter.azure_project }}/_git/{{ cookiecutter.azure_repo }}",
     "python_version": 3.9,
     "create_git": "y",
     "create_conda": "y",

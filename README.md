@@ -37,12 +37,11 @@ This will start cookicutter and ask you for the following inputs:
 |Input|Description|Example|
 |---|---|---|
 |`author_name`|Your first and last name.|`Lukas Koning`|
-|`author_email`|Your e-mail address.|`lfkoning@gmail.com`|
+|`author_email`|Your e-mail address.|`lukas.koning@afm.nl`|
 |`project`|Title for your project.|`Test Project`|
-|`project_path`|Path to your project.|`test_project`|
-|`azure_project`|Project name in Azure DevOps.|`Test`|
-|`azure_repo`|Name of the project's repository.|`test-project-py`|,
-|`azure_url`|URL to the project's repository|`https://...@dev.azure.com/.../Test/test_project-py`|,
+|`azure_project`|Project name in Azure DevOps.|`TEST`|
+|`azure_repo`|Name of the project's repository.|`test-project`|,
+|`azure_url`|URL to the project's repository|`https://dev.azure.com/afm-spot-on/TEST/test_project`|,
 |`python_version`|The Python version you are using.|`3.9`|
 |`create_git`|Create a new git repository? (y/n).|`y`|
 |`create_conda`|Create a new Anaconda environment? (y/n)|`y`|
@@ -92,4 +91,4 @@ documentation, feel free to e-mail the authors.
 
 ## Maintainers
 
-1. Lukas Koning (lfkoning@gmail.com)
+1. Lukas Koning (lukas.koning@afm.nl)
