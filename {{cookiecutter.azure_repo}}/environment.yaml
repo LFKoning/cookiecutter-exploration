@@ -6,14 +6,18 @@ dependencies:
   # Python interpreter version
   - python=3.9
 
-  # Add conda dependencies here, examples:
-  # - pandas==1.1.0
-  # - notebook
+  # Add conda dependencies here:
+  - pandas
+  - notebook
+
+  # Development dependencies (leave as is)
+  - isort
+  - black
+  - pylint
 
   - pip:
-    # Add PyPI dependencies here, examples:
-    # - pandas==1.1.0
-    # - notebook
-
-    # Development dependencies; leave as is!
+    # Add PyPI dependencies here:
+{% if cookiecutter.precommit.startswith("y") %}
+    # Development dependencies (leave as is)
     - pre-commit
+{% endif %}

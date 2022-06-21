@@ -13,9 +13,6 @@ def is_yes(value):
 print("\n\n")
 print("Post-processing cookiecutter template.")
 
-# Rename gitignore
-os.rename('gitignore', '.gitignore')
-
 # Create git repo
 if is_yes("{{ cookiecutter.create_git }}"):
     print("Setting up the git repository.")
@@ -32,10 +29,10 @@ if is_yes("{{ cookiecutter.create_conda }}"):
         + "python={{ cookiecutter.python_version }}"
     )
 
-    print("Installing development packages.")
+    print("Installing conda packages.")
     os.system(
         "conda activate {{ cookiecutter.azure_repo }} "
-        + "& conda install --yes --quiet black pylint"
+        + "& conda install --yes --quiet isort black pylint pandas notebook"
     )
 
     # Pre-commit setup

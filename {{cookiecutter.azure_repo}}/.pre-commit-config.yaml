@@ -14,6 +14,7 @@ repos:
     - id: check-merge-conflict
       name: Check merge conflicts
 
+  # Hooks using local packages
   - repo: local
     hooks:
 
@@ -25,7 +26,16 @@ repos:
       files: \.ipynb$
       entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
 
-    # Auto-format with local black
+    # Sort imports in scripts
+    - id: isort
+      name: Sort import statements
+      stages: [commit]
+      language: system
+      entry: python -m isort
+      types: [python]
+      files: (^notebooks/)
+
+    # Auto-format scripts with black
     - id: black
       name: Format code using black
       stages: [commit]
@@ -34,7 +44,7 @@ repos:
       types: [python]
       files: (^notebooks/)
 
-    # Lint with local pylint
+    # Lint scripts with pylint
     - id: pylint
       name: Check code style using pylint
       language: system
