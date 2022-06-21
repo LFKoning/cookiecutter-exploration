@@ -1,4 +1,4 @@
-# {{cookiecutter.project|title}}
+# {{ cookiecutter.project|title }}
 
 ## Goal
 
@@ -15,13 +15,13 @@ conda create --file environment.yml
 Activate the environment to start working with it:
 
 ```shell
-conda activate {{cookiecutter.azure_repo}}
+conda activate {{ cookiecutter.azure_repo }}
 ```
 
 Then create a folder for the project and clone the repository from Azure DevOps:
 
 ```shell
-git clone {{cookiecutter.azure_url}}
+git clone {{ cookiecutter.azure_url }}
 ```
 
 Finally, install the package using pip:
@@ -35,6 +35,20 @@ Or, if you want to contribute to the package, use this command instead:
 ```shell
 python -m pip install -e .[dev]
 ```
+
+## Project Structure
+
+The project has the following folder structure:
+
+|Folder|Contents|
+|---|---|
+|dashboard|Folder containing PowerBI dashboard(s).|
+|models|Folder containing trained models / model artefacts.|
+|notebooks|Folder containing Jupyter Notebooks and Python code.|
+|output|Folder for storing output images, graphs, et cetera.|
+|sql|Folder containing (explorative) SQL scripts.|
+
+TODO: Feel free to remove any folders your project does not require.
 
 ## Usage
 
@@ -52,4 +66,4 @@ documentation, feel free to e-mail the authors.
 
 This project is maintained by:
 
-1. {{cookiecutter.author_name}} ({{cookiecutter.author_email}})
+1. {{ cookiecutter.author_name }} ({{ cookiecutter.author_email }})
