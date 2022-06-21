@@ -3,9 +3,6 @@
 # Note: To share settings with others, uncomment this line.
 # .vscode
 
-# Do not include data into the code repo!
-data/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
