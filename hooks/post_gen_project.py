@@ -32,8 +32,7 @@ if is_yes("{{ cookiecutter.create_conda }}"):
         if is_yes("{{ cookiecutter.create_git }}"):
             print("Installing pre-commit hooks.")
             os.system(
-                "conda activate {{ cookiecutter.azure_repo }} "
-                + "& python -m pre-commit install"
+                "conda activate {{ cookiecutter.azure_repo }} & pre-commit install"
             )
         else:
             print("Cannot install pre-commit hooks; no git repository!")
