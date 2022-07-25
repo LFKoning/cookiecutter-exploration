@@ -14,6 +14,10 @@ user_input = {
         "value": "{{ cookiecutter.project }}",
         "pattern": r"^[a-zA-Z][a-zA-Z0-9\-_\s]+$",
     },
+    "azure_user": {
+        "value": "{{ cookiecutter.azure_user }}",
+        "pattern": r"^[a-zA-Z\-_]+$",
+    },
     "azure_project": {
         "value": "{{ cookiecutter.azure_project }}",
         "pattern": r"^[^_.][^:/\\~&%;@'\"?<>|#$*}{,+=[\]]+[^.]$",

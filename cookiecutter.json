@@ -2,6 +2,7 @@
     "author_name": null,
     "author_email": "{{ cookiecutter.author_name|lower|replace(' ', '.') }}@gmail.com",
     "project": null,
+    "azure_user": "{{ cookiecutter.author_name|lower|replace(' ', '-') }}",
     "azure_project": null,
     "azure_repo": "{{ cookiecutter.project|lower|replace(' ', '-') }}",
     "azure_url": "https://{{ cookiecutter.azure_user }}@dev.azure.com/{{ cookiecutter.azure_user }}/{{ cookiecutter.azure_project|urlencode }}/_git/{{ cookiecutter.azure_repo }}",
