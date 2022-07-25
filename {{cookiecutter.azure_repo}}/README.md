@@ -24,18 +24,6 @@ Then create a folder for the project and clone the repository from Azure DevOps:
 git clone {{ cookiecutter.azure_url }}
 ```
 
-Finally, install the package using pip:
-
-```shell
-python -m pip install .
-```
-
-Or, if you want to contribute to the package, use this command instead:
-
-```shell
-python -m pip install -e .[dev]
-```
-
 ## Project Structure
 
 The project has the following folder structure:
