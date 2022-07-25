@@ -5,6 +5,7 @@ name: {{cookiecutter.azure_repo}}
 dependencies:
   # Python interpreter version
   - python=3.9
+  - pip
 
   # Add conda dependencies here:
   - pandas

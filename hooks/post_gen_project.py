@@ -24,26 +24,20 @@ if is_yes("{{ cookiecutter.create_git }}"):
 # Create Anaconda environment
 if is_yes("{{ cookiecutter.create_conda }}"):
     print("Creating Anaconda environment: {{ cookiecutter.azure_repo }}.")
-    os.system(
-        "conda create --yes --quiet --name {{ cookiecutter.azure_repo }} "
-        + "python={{ cookiecutter.python_version }}"
-    )
-
-    print("Installing conda packages.")
-    os.system(
-        "conda activate {{ cookiecutter.azure_repo }} "
-        + "& conda install --yes --quiet isort black pylint pandas notebook"
-    )
+    os.system("conda env create -f environment.yaml")
 
     # Pre-commit setup
     if is_yes("{{ cookiecutter.precommit }}"):
-        # Install pre-commit and hooks
-        print("Installing pre-commit and hooks.")
-        os.system(
-            "conda activate {{ cookiecutter.azure_repo }} "
-            + "& python -m pip install pre-commit"
-        )
-        os.system("conda activate {{ cookiecutter.azure_repo }} & pre-commit install")
+        # Note: Requires a git repository to be initialized!
+        if is_yes("{{ cookiecutter.create_git }}"):
+            print("Installing pre-commit hooks.")
+            os.system(
+                "conda activate {{ cookiecutter.azure_repo }} "
+                + "& python -m pre-commit install"
+            )
+        else:
+            print("Cannot install pre-commit hooks; no git repository!")
+            print("Type `pre-commit install` in the package folder to install manually.")
 
     else:
         # Remove pre-commmit config
